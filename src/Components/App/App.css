@@ -1,0 +1,19 @@
+.editor {
+  height: 90vh;
+  width: 60%;
+  float: left;
+  display: inline-block;
+}
+
+.terminal{
+  height: 90vh;
+  /* width: 50%; */
+  /* float: left;
+  display: inline-block; */
+  overflow-y: scroll;
+}
+
+.container{
+  display: inline-block;
+  width: 100%;
+}
