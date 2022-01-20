@@ -15,13 +15,14 @@ function Terminal() {
         )
 
         term.writeln("Welcome to xterm.js")
-        term.writeln("term is a local terminal emulation, without a real terminal in the back-end.")
-        term.writeln("Type some keys and commands to play around.")
+
+        term.write("web shell $ ");
         term.writeln("")
         
         term.prompt = () => {
             if (curr_line) {
               let data = { method: "command", command: curr_line };
+              curr_line="";
             //   ws.send(JSON.stringify(data));
             }
           };
@@ -30,6 +31,7 @@ function Terminal() {
           term.onKey(e=> {
             var ev=e.domEvent,key=e.key;
             if (ev.keyCode === 13) {
+              // Enter
               if (curr_line) {
                 entries.push(curr_line);
                 term.write("\r\n");
@@ -48,7 +50,7 @@ function Terminal() {
             }
           });
     
-          // paste value
+        // paste value
         //   term.on("paste", function(data) {
         //     curr_line += data;
         //     term.write(data);
